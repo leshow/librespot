@@ -2,9 +2,10 @@ use super::{Open, Sink};
 use crate::audio::AudioPacket;
 use gst::prelude::*;
 use gst::*;
+use zerocopy::*;
+
 use std::sync::mpsc::{sync_channel, SyncSender};
 use std::{io, thread};
-use zerocopy::*;
 
 #[allow(dead_code)]
 pub struct GstreamerSink {
